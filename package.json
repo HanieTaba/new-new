@@ -1,0 +1,14 @@
+{
+  "name": "co-ideation-study",
+  "version": "0.9.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.10.1"
+  }
+}
