@@ -40,4 +40,4 @@ if(req.method==='PUT'&&a[0]==='api'&&a[1]==='session'&&okId(a[2])){
 // Researcher data is imported locally from the participant email attachment.
 return reply(res,404,{error:'Not found'});
 }catch(e){console.error(e);return reply(res,e.message==='Payload too large'?413:500,{error:e.message==='Payload too large'?'Payload too large':'Server error'})}
-}).listen(PORT,'0.0.0.0',()=>console.log('Co-Ideation pilot listening on '+PORT));
+}).listen(PORT,'0.0.0.0',()=>{console.log('Co-Ideation pilot listening on '+PORT);const base=process.env.RENDER_EXTERNAL_URL;if(base){console.log('PARTICIPANT URL: '+base+'/');console.log('RESEARCHER URL: '+base+'/researcher.html');console.log('Assigned participant example: '+base+'/?assignment=T0-C0');}});
